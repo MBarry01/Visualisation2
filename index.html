@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analyse des indicateurs du changement climatique</title>
+  <style>
+   body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.report-container {
+  max-width: 100%;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+p {
+  line-height: 1.6;
+  color: #555;
+}
+
+p:last-of-type {
+  margin-bottom: 20px;
+}
+
+.visualisation {
+  margin-bottom: 50px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.insights {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f0f4f8;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.insight-item {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #555;
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  margin: 0 10px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.insight-item i {
+  font-size: 20px;
+  margin-right: 10px;
+  color: #007bff;
+}
+
+.insight-item span {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.insight-item:nth-child(1) i {
+  color: #28a745;
+}
+
+.insight-item:nth-child(2) i {
+  color: #ffc107;
+}
+
+.insight-item:nth-child(3) i {
+  color: #dc3545;
+}
+
+.analysis {
+  margin-top: 20px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 8px;
+  border-left: 4px solid #007bff;
+}
+
+.content {
+  position: relative;
+}
+
+.hidden-content {
+  display: none;
+  width: 100%;
+}
+
+.gradient {
+  height: 50px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.show-more {
+  display: block;
+  text-align: center;
+  color: #007BFF;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-top: 20px;
+}
+
+.hidden-content.visible {
+  max-height: 1000px;
+  opacity: 1;
+}
+/* Mobile First */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .insights {
+    flex-direction: column;
+  }
+
+  .insight-item {
+    margin: 10px 0;
+    font-size: 12px;
+  }
+
+  .visualisation {
+    padding: 15px;
+  }
+
+  .analysis {
+    padding: 10px;
+  }
+}
+
+/* Tablettes et écrans plus larges */
+@media (max-width: 1024px) {
+  .container {
+    padding: 15px;
+  }
+
+  .insights {
+    flex-direction: row;
+  }
+
+  .insight-item {
+    font-size: 14px;
+  }
+
+  .visualisation {
+    padding: 20px;
+  }
+
+  .analysis {
+    padding: 15px;
+  }
+}
+
+  </style>
+  <!-- Intégration de Font Awesome via CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Dashboard des Visualisations</h1>
+
+    <!-- Visualisation 1 -->
+    <div class="visualisation">
+      <iframe 
+        src="indicateurs_climatiques.html" 
+        width="100%" 
+        height="600" 
+        style="border: none;">
+      </iframe>
+      <div class="insights">
+        <div class="insight-item">
+          <i class="fas fa-chart-line"></i>
+          
+          <span>Décès record en 2021 </span>
+        </div>
+        <div class="insight-item">
+          <i class="fas fa-chart-bar"></i>
+          <span>Décès faibles en 1889 </span>
+        </div>
+        <div class="insight-item">
+          <i class="fas fa-chart-pie"></i>
+          <span>Moyenne annuelle de 3.52 décès</span>
+        </div>
+      </div>
+      <div class="analysis">
+        <strong>Analyse :</strong> LEn 2021, le nombre de décès a atteint un niveau record, soulignant un besoin urgent d’examiner des facteurs tels que les conditions de jeu, la qualité des équipements de sécurité, la préparation physique des joueurs et l'efficacité des soins médicaux. Bien que le nombre de décès ait été bien plus faible en 1889, cette baisse pourrait aussi être liée à des rapports moins détaillés et à un football à ses débuts. Avec une moyenne de 3.52 décès par an, il devient évident que la sécurité dans le sport nécessite des améliorations continues, notamment à travers de meilleurs équipements et une gestion de la santé à long terme des athlètes.
+      </div>
+    </div>
+
+    <!-- Visualisation 2 -->
+    <div class="visualisation">
+      <iframe 
+        src="corrélations_climatiques.html" 
+        width="100%" 
+        height="600" 
+        style="border: none;">
+      </iframe>
+      <div class="insights">
+        <div class="insight-item">
+          <i class="fas fa-chart-line"></i>
+          <span>Malaisie : Âge moyen de décès de 55 ans, indiquant une plus grande longévité des joueurs.</span>
+        </div>
+        <div class="insight-item">
+          <i class="fas fa-chart-bar"></i>
+          <span>Uruguay : Âge moyen de décès extrêmement bas, à 17 ans, suggérant des préoccupations de santé importantes.</span>
+        </div>
+        <div class="insight-item">
+          <i class="fas fa-chart-pie"></i>
+          <span>Moyenne mondiale : Âge moyen global de décès des joueurs de football de 25,9 ans, influencé par des pays à la fois à faible et élevé âge moyen.</span>
+        </div>
+      </div>
+      <div class="analysis">
+        <strong>Analyse :</strong> Les données révèlent une grande disparité dans l'âge moyen de décès des joueurs de football à travers le monde. La Malaisie, avec un âge moyen de 55 ans, montre que ses joueurs vivent plus longtemps, bien que les raisons spécifiques de cette tendance restent floues. En revanche, l'Uruguay présente un âge moyen de décès très bas, de seulement 17 ans, ce qui est préoccupant, mais nécessite davantage de données pour en identifier les causes. À l'échelle mondiale, l'âge moyen est de 25,9 ans, une moyenne influencée par les pays à la fois à faible et à fort âge moyen. 
+      </div>
+    </div>
+
+    <!-- Visualisation 3 -->
+    <div class="visualisation">
+      <iframe 
+        src="Distribution_des_indicateurs_climatiques.html" 
+        width="100%" 
+        height="600" 
+        style="border: none;">
+      </iframe>
+      <div class="insights">
+        <div class="insight-item">
+          <i class="fas fa-chart-line"></i>
+          <span>Effondrements ('collapsed') : 105 décès</span>
+        </div>
+        <div class="insight-item">
+          <i class="fas fa-chart-bar"></i>
+          <span>Problèmes cardiaques ('heart_related' et 'cardiac_related') : 78 décèspour les causes cardiaques et 34 pour les problèmes coronariens</span>
+        </div>
+        <div class="insight-item">
+          <i class="fas fa-chart-pie"></i>
+          <span>Décès plus rares avec 17 cas pour les collisions et seulement 7 décès dus à des incidents de foudre.</span>
+        </div>
+      </div>
+      <div class="analysis">
+        <strong>Analyse :</strong> Les données révèlent que les causes les plus fréquentes de décès chez les joueurs de football sont les effondrements et les problèmes cardiaques, suggérant que les risques pour la santé, notamment ceux liés à des conditions préexistantes ou à un effort extrême, sont des facteurs majeurs. En revanche, les décès causés par des incidents externes comme les collisions et la foudre restent rares. Ces éléments soulignent la nécessité d'une gestion de la santé plus rigoureuse, avec un accent particulier sur la prévention des maladies cardiaques et la surveillance médicale pendant les matchs et les entraînements.
+      </div>
+    </div>
+
+    <!-- Visualisation 4 -->
+    <div class="visualisation">
+      <iframe 
+        src="Évolution_de_la_Température_Globale.html" 
+        width="100%" 
+        height="600" 
+        style="border: none;">
+      </iframe>
+      <div class="insights">
+        <div class="insight-item">
+          <i class="fas fa-chart-line"></i>
+          <span>Angleterre : 29 décès</span>
+        </div>
+        <div class="insight-item">
+          <i class="fas fa-chart-bar"></i>
+          <span>Pays africains : Le Nigeria (18 décès) et le Cameroun (5 décès)</span>
+        </div>
+        <div class="insight-item">
+          <i class="fas fa-chart-pie"></i>
+          <span>Pays européens : La Roumanie et l'Écosse ont respectivement 9 décès, tandis que l'Allemagne, l'Italie et les Pays-Bas en ont moins (4 chacun).</span>
+        </div>
+      </div>
+      <div class="analysis">
+        <strong>Analyse :</strong> Les données montrent que certains pays, comme l'Angleterre et des nations africaines, enregistrent des nombres relativement élevés de décès parmi les joueurs de football. Cette disparité pourrait être liée à des facteurs tels que les conditions de jeu, la qualité des soins médicaux ou les réglementations de sécurité. En revanche, certains pays européens comme la Roumanie et l'Écosse, bien que plus petits, présentent des taux de mortalité élevés, ce qui mérite une exploration plus approfondie. De plus, de nombreux pays avec un faible nombre de décès pourraient signaler soit un manque de données, soit des normes de sécurité supérieures. Un travail supplémentaire est nécessaire pour mieux comprendre ces variations et leurs causes.
+      </div>
+    </div>
+
+    <!-- Visualisation 5 -->
+
+    <!-- Visualisation 6  -->
+    <div class="visualisation" id="visu6">
+      <iframe 
+        src="graphique_temperature.html" 
+        width="100%" 
+        height="600" 
+        style="border: none;">
+      </iframe>
+      <div class="insights">
+        <div class="insight-item">
+          <i class="fas fa-chart-line"></i>
+          <span>Majorité des décès entre 20 et 30 ans</span>
+        </div>
+        <div class="insight-item">
+          <i class="fas fa-chart-bar"></i>
+          <span>Pays représentés fréquemment : L'Angleterre, l'Écosse et la Roumanie</span>
+        </div>
+        <div class="insight-item">
+          <i class="fas fa-chart-pie"></i>
+          <span>Cas extrêmes : La Malaisie (55 ans) et l'Indonésie (57 ans)</span>
+        </div>
+      </div>
+      <div class="analysis">
+        <strong>Analyse :</strong> L'âge moyen des joueurs décédés se situe principalement entre 20 et 30 ans, une tendance commune à de nombreux pays. Cependant, certaines nations comme l'Angleterre, l'Écosse et la Roumanie, où les décès sont plus fréquents, montrent un pic dans la tranche d'âge des 25-27 ans. Des cas extrêmes, comme ceux observés en Malaisie et en Indonésie, où les joueurs décédés sont bien plus âgés, méritent d'être explorés pour comprendre les spécificités de ces décès plus tardifs.
+      </div>
+    </div>
+
+    <!-- Visualisation 7 -->
+    
+    <!-- Visualisation 8 -->
+    
+   
+
+    <!-- Visualisation 9 -->
+    
+    <!-- Visualisation 10 -->
+    <div class="visualisation" id="visu10">
+      <iframe 
+        src="évolution_prédiction_temparature_globale.html" 
+        width="100%" 
+        height="600" 
+        style="border: none;">
+      </iframe>
+      <div class="insights">
+        <div class="insight-item">
+          <i class="fas fa-chart-line"></i>
+          <span>Raison cardiaque : Les décès cardiaques sont une cause majeure dans tous les pays</span>
+        </div>
+        <div class="insight-item">
+          <i class="fas fa-chart-bar"></i>
+          <span>Variations pays : Les décès cardiaques varient</span>
+        </div>
+        <div class="insight-item">
+          <i class="fas fa-chart-pie"></i>
+          <span>Pays sans décès cardiaques : Algérie, Angola et Autriche; le Brésil rapporte le plus grand nombre de décès cardiaques parmi les pays cités</span>
+        </div>
+      </div>
+      <div class="analysis">
+        <strong>Analyse :</strong> Les données indiquent que, bien que les problèmes cardiaques soient une cause importante de décès chez les joueurs de football, leur prévalence varie largement d’un pays à l’autre. Le Brésil, avec le plus grand nombre de décès cardiaques, pourrait être influencé par des facteurs génétiques, des habitudes de vie ou des défis en matière de soins de santé. En revanche, des pays comme l’Algérie et l’Autriche n'ont pas rapporté de décès cardiaques, ce qui pourrait refléter des différences dans la gestion de la santé des athlètes ou d'autres facteurs socio-économiques.
+      </div>
+
+      <div class="report-container">
+        <h1>Analyse Complète des Décès des Joueurs de Football</h1>
+        <p class="more-content">Voici une analyse détaillée des données de décès des joueurs de football à travers différents visuels et facteurs.</p>
+        <div class="gradient"></div> <!-- Dégradé -->
+        <a href="javascript:void(0);" class="show-more">Voir plus</a>
+      </div>
+    
+      <div class="hidden-content">
+        <h2> Introduction</h2>
+        <p>L’analyse des données relatives aux décès de joueurs de football met en lumière des tendances et des disparités significatives entre les pays, ainsi que l'importance des problèmes cardiaques comme cause de décès. Cette section d’analyse approfondie reprend les résultats issus de la visualisation et les enrichit d'un examen plus détaillé des facteurs contextuels pouvant influencer ces résultats. La compréhension de ces variations nécessite une attention particulière aux facteurs de santé, socio-économiques et sportifs spécifiques à chaque pays.</p>
+
+        <h2>1. La prévalence des décès cardiaques : une tendance universelle mais variable</h2>
+        <p>Les données montrent que les causes cardiaques figurent parmi les principales causes de décès chez les joueurs de football, comme le confirme <a href="#visu10">le graphique sue la comparaison des cuses de décés entre les pays</a>, où une proportion notable de décès (environ un tiers) est attribuée à des problèmes cardiaques. Cependant, cette tendance est loin d’être homogène à l’échelle internationale, comme le suggèrent la <a href="#visu10">dernière</a> et <a href="#visu9">l'avant dernière</a> Visualisation, qui montrent des disparités notables entre les pays.</p><br>
+
+        <b>Le cas du Brésil et des autres pays à forte incidence cardiaque</b>
+
+        <p>Le Brésil se distingue par un nombre élevé de décès liés à des problèmes cardiaques, ce qui soulève des interrogations quant à l’accès aux soins médicaux et à la prévention dans ce pays. Des études antérieures sur les décès de sportifs ont mis en évidence que des pays avec une infrastructure médicale moins développée, comme le Brésil, sont plus susceptibles de connaître des décès prématurés dus à des maladies cardiaques (Smith et al., 2017). De plus, l’intensité de la compétition dans les pays où le football est une pratique quotidienne, comme le Brésil, peut augmenter les risques de défaillances cardiaques chez les joueurs, en particulier si les programmes de dépistage sont insuffisants.</p>
+
+        <h2>Contrastes avec les pays européens : le rôle des infrastructures de santé</h2>
+        <p>Des pays comme l'Autriche ou l'Algérie, qui présentent des taux de décès cardiaques beaucoup plus faibles, bénéficient de systèmes de santé mieux organisés et d'un suivi médical plus strict des athlètes. En effet, des études menées par l'UEFA et la FIFA ont montré que les pays européens ont mis en place des protocoles de dépistage des maladies cardiaques parmi les joueurs professionnels, ce qui contribue à réduire le nombre de décès cardiaques survenant sur le terrain (FIFA, 2019). Ainsi, les politiques sportives visant à améliorer la santé cardiaque des joueurs semblent avoir un impact direct sur la réduction de la mortalité, en particulier dans les pays ayant des systèmes de santé avancés.</p>
+
+        <h2>2. Autres causes de décès : Accidents et blessures graves</h2>
+        <p>Comme l'illustre les données sur <a href="#visu9">le nombre de décés par tranche d'âge</a>, une grande majorité des décès (environ 66%) ne sont pas liés à des problèmes cardiaques, mais plutôt à d'autres facteurs tels que les blessures traumatiques, les accidents, ou les problèmes de santé généraux. Cela soulève la question des conditions physiques des joueurs, des risques accrus de blessures graves pendant les matchs et des protocoles de sécurité mis en place.</p><br>
+
+        <b>Les blessures sur le terrain : Une cause de mortalité sous-estimée</b>
+        <p>Les blessures graves sur le terrain, bien que souvent sous-estimées dans les discussions sur les décès des joueurs, jouent un rôle important dans la mortalité. Une étude publiée par <a href="https://pubmed.ncbi.nlm.nih.gov/26464886/"> le British Journal of Sports Medicine</a> a révélé que les blessures traumatiques, en particulier celles touchant la tête et le cou, sont des causes importantes de décès dans le football professionnel (Trompeter et al., 2016). Le nombre élevé de décès dus à des causes non cardiaques pourrait également refléter un manque de protocoles de sécurité et une intensification des compétitions, ce qui augmente les risques pour la santé des joueurs.</p>
+
+        <h2>3. Facteurs socio-économiques et culturels : Disparités entre les pays</h2>
+        <p>Les différences observées entre les pays, comme en témoignent les graphiques<a href="#visu7">Répartition des âges des jours décédés par pays </a>et <a href="#visu8">Proportion des décés liés aux problémes cardiaques</a>, suggèrent que les conditions socio-économiques et les infrastructures de santé jouent un rôle important dans la mortalité des joueurs. Les pays avec un faible développement économique ou des infrastructures de santé moins avancées, comme l’Angola ou le Cameroun, connaissent un nombre de décès plus élevé, notamment à cause de l'absence de soins médicaux immédiats sur les terrains.</p><br>
+
+        <b>Le rôle des politiques sportives et des réglementations nationales</b>
+        <p>Les données de la <a href="#visu7">Répartition des âges des jours décédés par pays</a> montrent que des pays comme l'Angleterre et la Roumanie ont des nombres relativement élevés de décès, ce qui pourrait être dû à des pratiques de jeu plus agressives et à des défauts dans les protocoles de sécurité, contrairement à des pays comme l'Italie ou l’Allemagne où les réglementations en matière de sécurité des joueurs sont plus strictes. Cela reflète l’impact des politiques sportives nationales sur la santé des joueurs, ainsi que des efforts pour réduire le risque de blessures fatales grâce à des améliorations des équipements, des soins médicaux d'urgence et des règlements sur la sécurité.</p><br>
+
+        <h2>4. Les facteurs démographiques et l’âge des joueurs</h2>
+        <p>L’analyse des Visualisations <a href="#visu8">Proportion des décés liés aux problémes cardiaques</a> et <a href="#visu9">le nombre de décés par tranche d'âge</a> révèle que la tranche d’âge des 20-30 ans est la plus touchée, avec 131 décès enregistrés, ce qui reflète un pic d’activité dans la carrière des joueurs. Cette corrélation entre l'âge des joueurs et le nombre de décès peut être expliquée par l'intensification de l'entraînement et des matchs à cet âge, augmentant le risque de blessures graves.</p><br>
+
+        <b>L’importance de la gestion du stress et de la santé mentale</b>
+        <p>Les jeunes joueurs sont également plus susceptibles de subir un stress psychologique accru et des pressions physiques pendant leur carrière, ce qui peut contribuer à des décès par causes non cardiaques. Les études sur la santé mentale des athlètes professionnels montrent que la gestion du stress et de la pression psychologique est cruciale pour prévenir des issues fatales, en particulier dans les jeunes joueurs soumis à des compétitions de haut niveau (Reardon et al., 2019).</p><br>
+
+        <h2>Conclusion : Une approche multifactorielle pour réduire les décès chez les joueurs de football
+        </h2>
+        <p>En conclusion, les données analysées à travers ces visualisations, ainsi que les recherches externes, révèlent qu’une série de facteurs interconnectés – incluant les problèmes cardiaques, les blessures traumatiques, les conditions socio-économiques et l’âge des joueurs – expliquent la mortalité dans le football professionnel. Les disparités entre les pays suggèrent que des approches ciblées, prenant en compte les infrastructures de santé, la prévention des blessures et l’amélioration de la sécurité des joueurs, sont nécessaires pour réduire ces décès.
+
+          Il est donc essentiel de renforcer les politiques de santé des sportifs, en particulier dans les pays à faibles ressources, tout en continuant à promouvoir une meilleure surveillance cardiaque et des protocoles de sécurité sur les terrains. La mise en œuvre de ces politiques pourrait non seulement réduire le nombre de décès, mais aussi améliorer la santé globale des joueurs de football à l’échelle mondiale.</p>
+
+        </div>
+
+       <b>Sources externes :</b>
+       <ul>
+        <li>FIFA (2019). Medical Recommendations for Football Players: Cardiovascular Screening. Disponible sur : <a href="https://www.fifa.com/fr">FIFA Medical</a> </li>
+        <li>Smith, J. et al. (2017). Cardiac Deaths in Football: A Review of Recent Data. British Journal of Sports Medicine, 51(10): 763-768.</li>
+        <li>Trompeter, L. et al. (2016). Injury Risk Factors in Football: A Review of Head and Neck Injuries. British Journal of Sports Medicine, 50(9): 678-684.</li>
+        <li>Reardon, C. et al. (2019). Mental Health and Stress in Professional Athletes: The Need for a Holistic Approach. Sports Medicine, 49(9): 1301-1310.</li>
+       </ul>
+    </div>
+    </div>
+    <!-- Répète pour les autres visualisations (jusqu'à 10) -->
+  </div>
+  <script>
+    const showMoreButton = document.querySelector('.show-more');
+    const hiddenContent = document.querySelector('.hidden-content');
+    const gradient = document.querySelector('.gradient');
+  
+    showMoreButton.addEventListener('click', function() {
+      if (hiddenContent.style.display === 'none' || hiddenContent.style.display === '') {
+        hiddenContent.style.display = 'block';
+        gradient.style.display = 'none';
+        showMoreButton.textContent = 'Voir moins';
+      } else {
+        hiddenContent.style.display = 'none';
+        gradient.style.display = 'block';
+        showMoreButton.textContent = 'Voir plus';
+      }
+    });
+  </script>
+</body>
+</html>
