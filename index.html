@@ -114,15 +114,6 @@ p:last-of-type {
   display: none;
   width: 100%;
 }
-
-.gradient {
-  height: 50px;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
 .show-more {
   display: block;
   text-align: center;
@@ -182,6 +173,34 @@ p:last-of-type {
     padding: 15px;
   }
 }
+#download-btn {
+  display: block;
+  width: auto;
+  max-width: 250px;
+  padding: 12px 20px;
+  background-color: #147c13;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 16px;
+  margin: 10px auto 20px auto;
+  text-align: center;
+  transition: background 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+#download-btn:hover {
+  background-color: #0f520e;
+}
+
+/* Mobile First */
+@media (max-width: 768px) {
+  #download-btn {
+    width: 100%;
+    max-width: none;
+  }
+}
 
   </style>
   <!-- Intégration de Font Awesome via CDN -->
@@ -190,9 +209,10 @@ p:last-of-type {
 <body>
   <div class="container">
     <h1>Dashboard des Visualisations</h1>
+    <button id="download-btn">Télécharger les données</button>
 
     <!-- Visualisation 1 -->
-    <div class="visualisation">
+    <div class="visualisation" id="visu1">
       <iframe 
         src="indicateurs_climatiques.html" 
         width="100%" 
@@ -203,24 +223,24 @@ p:last-of-type {
         <div class="insight-item">
           <i class="fas fa-chart-line"></i>
           
-          <span>Décès record en 2021 </span>
+          <span>Hausse constante de la température depuis 1980. </span>
         </div>
         <div class="insight-item">
           <i class="fas fa-chart-bar"></i>
-          <span>Décès faibles en 1889 </span>
+          <span>Pic à 15.55°C, bien au-dessus de la moyenne de 14.34°C. </span>
         </div>
         <div class="insight-item">
           <i class="fas fa-chart-pie"></i>
-          <span>Moyenne annuelle de 3.52 décès</span>
+          <span>Corrélation avec le CO₂, confirmant l’impact des gaz à effet de serre</span>
         </div>
       </div>
       <div class="analysis">
-        <strong>Analyse :</strong> LEn 2021, le nombre de décès a atteint un niveau record, soulignant un besoin urgent d’examiner des facteurs tels que les conditions de jeu, la qualité des équipements de sécurité, la préparation physique des joueurs et l'efficacité des soins médicaux. Bien que le nombre de décès ait été bien plus faible en 1889, cette baisse pourrait aussi être liée à des rapports moins détaillés et à un football à ses débuts. Avec une moyenne de 3.52 décès par an, il devient évident que la sécurité dans le sport nécessite des améliorations continues, notamment à travers de meilleurs équipements et une gestion de la santé à long terme des athlètes.
+        <strong>Analyse :</strong> La température mondiale augmente de manière continue, en lien direct avec l’élévation du CO₂ atmosphérique. Cette tendance accentue les phénomènes climatiques extrêmes et menace les écosystèmes.
       </div>
     </div>
 
     <!-- Visualisation 2 -->
-    <div class="visualisation">
+    <div class="visualisation" id="visu2">
       <iframe 
         src="corrélations_climatiques.html" 
         width="100%" 
@@ -230,24 +250,24 @@ p:last-of-type {
       <div class="insights">
         <div class="insight-item">
           <i class="fas fa-chart-line"></i>
-          <span>Malaisie : Âge moyen de décès de 55 ans, indiquant une plus grande longévité des joueurs.</span>
+          <span>CO₂ et température sont faiblement corrélés (0.39), mais liés au réchauffement.</span>
         </div>
         <div class="insight-item">
           <i class="fas fa-chart-bar"></i>
-          <span>Uruguay : Âge moyen de décès extrêmement bas, à 17 ans, suggérant des préoccupations de santé importantes.</span>
+          <span>Montée des eaux et fonte des glaces sont modérément corrélées (-0.56).</span>
         </div>
         <div class="insight-item">
           <i class="fas fa-chart-pie"></i>
-          <span>Moyenne mondiale : Âge moyen global de décès des joueurs de football de 25,9 ans, influencé par des pays à la fois à faible et élevé âge moyen.</span>
+          <span>Glace arctique en forte baisse avec la hausse du CO₂ (-0.86).</span>
         </div>
       </div>
       <div class="analysis">
-        <strong>Analyse :</strong> Les données révèlent une grande disparité dans l'âge moyen de décès des joueurs de football à travers le monde. La Malaisie, avec un âge moyen de 55 ans, montre que ses joueurs vivent plus longtemps, bien que les raisons spécifiques de cette tendance restent floues. En revanche, l'Uruguay présente un âge moyen de décès très bas, de seulement 17 ans, ce qui est préoccupant, mais nécessite davantage de données pour en identifier les causes. À l'échelle mondiale, l'âge moyen est de 25,9 ans, une moyenne influencée par les pays à la fois à faible et à fort âge moyen. 
+        <strong>Analyse :</strong> Les corrélations montrent l’impact du CO₂ sur le climat : hausse des températures, fonte des glaces et élévation des mers. Ces tendances confirment le rôle des gaz à effet de serre dans le changement climatique. 
       </div>
     </div>
 
     <!-- Visualisation 3 -->
-    <div class="visualisation">
+    <div class="visualisation" id="visu3">
       <iframe 
         src="Distribution_des_indicateurs_climatiques.html" 
         width="100%" 
@@ -257,24 +277,23 @@ p:last-of-type {
       <div class="insights">
         <div class="insight-item">
           <i class="fas fa-chart-line"></i>
-          <span>Effondrements ('collapsed') : 105 décès</span>
+          <span>Température en hausse, variation modérée (13.3°C - 15.55°C).</span>
         </div>
         <div class="insight-item">
           <i class="fas fa-chart-bar"></i>
-          <span>Problèmes cardiaques ('heart_related' et 'cardiac_related') : 78 décèspour les causes cardiaques et 34 pour les problèmes coronariens</span>
+          <span> CO₂ augmente constamment (335.21 ppm → 422.15 ppm).</span>
         </div>
         <div class="insight-item">
           <i class="fas fa-chart-pie"></i>
-          <span>Décès plus rares avec 17 cas pour les collisions et seulement 7 décès dus à des incidents de foudre.</span>
+          <span>Glace arctique en baisse, fluctuation notable (4.81M km² - 7.31M km²).</span>
         </div>
       </div>
       <div class="analysis">
-        <strong>Analyse :</strong> Les données révèlent que les causes les plus fréquentes de décès chez les joueurs de football sont les effondrements et les problèmes cardiaques, suggérant que les risques pour la santé, notamment ceux liés à des conditions préexistantes ou à un effort extrême, sont des facteurs majeurs. En revanche, les décès causés par des incidents externes comme les collisions et la foudre restent rares. Ces éléments soulignent la nécessité d'une gestion de la santé plus rigoureuse, avec un accent particulier sur la prévention des maladies cardiaques et la surveillance médicale pendant les matchs et les entraînements.
-      </div>
+        <strong>Analyse :</strong> Les données montrent un réchauffement marqué : montée des températures et du CO₂, tandis que la glace arctique diminue. L’élévation du niveau marin est plus instable, mais suit une tendance haussière, confirmant l’impact du changement climatique.
     </div>
 
     <!-- Visualisation 4 -->
-    <div class="visualisation">
+    <div class="visualisation" id="visu4">
       <iframe 
         src="Évolution_de_la_Température_Globale.html" 
         width="100%" 
@@ -284,26 +303,26 @@ p:last-of-type {
       <div class="insights">
         <div class="insight-item">
           <i class="fas fa-chart-line"></i>
-          <span>Angleterre : 29 décès</span>
+          <span>Température en hausse de près de 0.5°C en 44 ans.</span>
         </div>
         <div class="insight-item">
           <i class="fas fa-chart-bar"></i>
-          <span>Pays africains : Le Nigeria (18 décès) et le Cameroun (5 décès)</span>
+          <span> Baisse de 13.30°C à 15.55°C, avec des fluctuations modérées.</span>
         </div>
         <div class="insight-item">
           <i class="fas fa-chart-pie"></i>
-          <span>Pays européens : La Roumanie et l'Écosse ont respectivement 9 décès, tandis que l'Allemagne, l'Italie et les Pays-Bas en ont moins (4 chacun).</span>
+          <span>Conforme aux prévisions, validant le réchauffement climatique.</span>
         </div>
       </div>
       <div class="analysis">
-        <strong>Analyse :</strong> Les données montrent que certains pays, comme l'Angleterre et des nations africaines, enregistrent des nombres relativement élevés de décès parmi les joueurs de football. Cette disparité pourrait être liée à des facteurs tels que les conditions de jeu, la qualité des soins médicaux ou les réglementations de sécurité. En revanche, certains pays européens comme la Roumanie et l'Écosse, bien que plus petits, présentent des taux de mortalité élevés, ce qui mérite une exploration plus approfondie. De plus, de nombreux pays avec un faible nombre de décès pourraient signaler soit un manque de données, soit des normes de sécurité supérieures. Un travail supplémentaire est nécessaire pour mieux comprendre ces variations et leurs causes.
+        <strong>Analyse :</strong> La température mondiale a augmenté régulièrement sur ces 44 ans, avec un pic récent à 15.55°C. Cette évolution, en ligne avec les modèles climatiques, témoigne du réchauffement global lié aux émissions de CO₂ et aux gaz à effet de serre.
       </div>
     </div>
 
     <!-- Visualisation 5 -->
 
     <!-- Visualisation 6  -->
-    <div class="visualisation" id="visu6">
+    <div class="visualisation" id="visu5">
       <iframe 
         src="graphique_temperature.html" 
         width="100%" 
@@ -313,19 +332,19 @@ p:last-of-type {
       <div class="insights">
         <div class="insight-item">
           <i class="fas fa-chart-line"></i>
-          <span>Majorité des décès entre 20 et 30 ans</span>
+          <span>La température mondiale devrait atteindre environ 15.85°C d'ici 2027, poursuivant la tendance de réchauffement.</span>
         </div>
         <div class="insight-item">
           <i class="fas fa-chart-bar"></i>
-          <span>Pays représentés fréquemment : L'Angleterre, l'Écosse et la Roumanie</span>
+          <span>La régression linéaire prévoit une augmentation continue, sans retournement brusque de la tendance.</span>
         </div>
         <div class="insight-item">
           <i class="fas fa-chart-pie"></i>
-          <span>Cas extrêmes : La Malaisie (55 ans) et l'Indonésie (57 ans)</span>
+          <span>Précision élevée, avec un faible écart-type, ce qui suggère une forte probabilité de cette prévision.</span>
         </div>
       </div>
       <div class="analysis">
-        <strong>Analyse :</strong> L'âge moyen des joueurs décédés se situe principalement entre 20 et 30 ans, une tendance commune à de nombreux pays. Cependant, certaines nations comme l'Angleterre, l'Écosse et la Roumanie, où les décès sont plus fréquents, montrent un pic dans la tranche d'âge des 25-27 ans. Des cas extrêmes, comme ceux observés en Malaisie et en Indonésie, où les joueurs décédés sont bien plus âgés, méritent d'être explorés pour comprendre les spécificités de ces décès plus tardifs.
+        <strong>Analyse :</strong> Le modèle de régression linéaire prédit que la température mondiale atteindra 15.85°C en 2027, confirmant une trajectoire de réchauffement ininterrompu. Cette évolution est cohérente avec les projections des climatologues, bien qu'il faille garder en tête que des variables imprévues, comme des changements de politiques mondiales, peuvent affecter ces prévisions.
       </div>
     </div>
 
@@ -338,7 +357,7 @@ p:last-of-type {
     <!-- Visualisation 9 -->
     
     <!-- Visualisation 10 -->
-    <div class="visualisation" id="visu10">
+    <div class="visualisation" id="visu6">
       <iframe 
         src="évolution_prédiction_temparature_globale.html" 
         width="100%" 
@@ -348,53 +367,53 @@ p:last-of-type {
       <div class="insights">
         <div class="insight-item">
           <i class="fas fa-chart-line"></i>
-          <span>Raison cardiaque : Les décès cardiaques sont une cause majeure dans tous les pays</span>
+          <span> Le niveau de la mer devrait continuer à augmenter d'environ 5 mm par an.</span>
         </div>
         <div class="insight-item">
           <i class="fas fa-chart-bar"></i>
-          <span>Variations pays : Les décès cardiaques varient</span>
+          <span> Les données de régression linéaire prédisent une élévation supplémentaire de 3 à 5 mm d'ici 2027</span>
         </div>
         <div class="insight-item">
           <i class="fas fa-chart-pie"></i>
-          <span>Pays sans décès cardiaques : Algérie, Angola et Autriche; le Brésil rapporte le plus grand nombre de décès cardiaques parmi les pays cités</span>
+          <span>Les fluctuations importantes observées (variation allant de -5.67 mm à 18.56 mm) </span>
         </div>
       </div>
       <div class="analysis">
-        <strong>Analyse :</strong> Les données indiquent que, bien que les problèmes cardiaques soient une cause importante de décès chez les joueurs de football, leur prévalence varie largement d’un pays à l’autre. Le Brésil, avec le plus grand nombre de décès cardiaques, pourrait être influencé par des facteurs génétiques, des habitudes de vie ou des défis en matière de soins de santé. En revanche, des pays comme l’Algérie et l’Autriche n'ont pas rapporté de décès cardiaques, ce qui pourrait refléter des différences dans la gestion de la santé des athlètes ou d'autres facteurs socio-économiques.
+        <strong>Analyse :</strong> La prédiction de l'élévation du niveau de la mer pour 2027 est d'environ 6 à 7 mm supplémentaires, ce qui est conforme aux tendances observées sur la période de 1980 à 2023. Bien que la régression linéaire soit efficace pour modéliser les grandes tendances, elle ne peut pas intégrer toute la complexité des facteurs climatiques influençant ce phénomène. Toutefois, cette prédiction reste cohérente avec les projections scientifiques du réchauffement climatique et de la fonte des glaces, moteurs de l'élévation du niveau de la mer.
       </div>
 
       <div class="report-container">
-        <h1>Analyse Complète des Décès des Joueurs de Football</h1>
-        <p class="more-content">Voici une analyse détaillée des données de décès des joueurs de football à travers différents visuels et facteurs.</p>
+        <h1>Analyse complète des tendances climatiques récentes et des projections futures</h1>
+        <p class="more-content">Voici une analyse détaillée des tendances climatiques et des projections futures</p>
         <div class="gradient"></div> <!-- Dégradé -->
         <a href="javascript:void(0);" class="show-more">Voir plus</a>
       </div>
     
       <div class="hidden-content">
-        <h2> Introduction</h2>
-        <p>L’analyse des données relatives aux décès de joueurs de football met en lumière des tendances et des disparités significatives entre les pays, ainsi que l'importance des problèmes cardiaques comme cause de décès. Cette section d’analyse approfondie reprend les résultats issus de la visualisation et les enrichit d'un examen plus détaillé des facteurs contextuels pouvant influencer ces résultats. La compréhension de ces variations nécessite une attention particulière aux facteurs de santé, socio-économiques et sportifs spécifiques à chaque pays.</p>
+        <h2> Température Globale</h2>
+        <p>Les données relatives à la température mondiale <sup style="font-size: xx-small;"><a href="#visu1">1</a></sup> montrent une hausse progressive de la température moyenne de la Terre. La moyenne des températures sur les 44 dernières années est de 14.34°, avec une variation de 0.49°C entre 1980 et 2023, passant de 13.30°C à 15.55°C. Cela témoigne d'un réchauffement notable dans un intervalle de temps relativement court, ce qui, selon les experts, est un signe inquiétant des effets des émissions de gaz à effet de serre. Selon le GIEC, une grande partie de cette élévation est causée par l'augmentation de la concentration de CO2 dans l'atmosphère, principalement dû à la combustion des combustibles fossiles et à la déforestation.
 
-        <h2>1. La prévalence des décès cardiaques : une tendance universelle mais variable</h2>
-        <p>Les données montrent que les causes cardiaques figurent parmi les principales causes de décès chez les joueurs de football, comme le confirme <a href="#visu10">le graphique sue la comparaison des cuses de décés entre les pays</a>, où une proportion notable de décès (environ un tiers) est attribuée à des problèmes cardiaques. Cependant, cette tendance est loin d’être homogène à l’échelle internationale, comme le suggèrent la <a href="#visu10">dernière</a> et <a href="#visu9">l'avant dernière</a> Visualisation, qui montrent des disparités notables entre les pays.</p><br>
+          La projection pour 2027<sup style="font-size: xx-small;"><a href="#visu5">2</a></sup> atteint 15.85°C, indiquant une poursuite de cette tendance à la hausse. Cette élévation des températures pourrait avoir des conséquences graves, notamment des événements climatiques extrêmes (vagues de chaleur, sécheresses, incendies), dont les effets sont déjà observés dans de nombreuses régions du monde. L'amplification arctique, où les températures dans l'Arctique augmentent beaucoup plus rapidement que la moyenne mondiale, est un phénomène clé de ce réchauffement. Cette tendance est également confirmée par diverses études scientifiques, dont celles du GIEC (Groupe d'experts intergouvernemental sur l'évolution du climat), qui avertissent d'une élévation de 1.5°C à 2°C d'ici la fin du siècle si les émissions actuelles persistent (IPCC, 2021).</p>
 
-        <b>Le cas du Brésil et des autres pays à forte incidence cardiaque</b>
+        <h2>2. Niveau de la Mer</h2>
+        <p>L’élévation du niveau de la mer est un autre phénomène clé du changement climatique, directement lié au réchauffement de l'atmosphère et à la fonte des glaces. Les données montrent une élévation moyenne du niveau de la mer de 5.51 mm par an entre 1980 et 2023<sup style="font-size: xx-small;"><a href="#visu2">3</a></sup>, avec une variation de -5.67 mm à 18.56 mm. Les projections indiquent une élévation supplémentaire de 5 à 6 mm par an d'ici 2027.
 
-        <p>Le Brésil se distingue par un nombre élevé de décès liés à des problèmes cardiaques, ce qui soulève des interrogations quant à l’accès aux soins médicaux et à la prévention dans ce pays. Des études antérieures sur les décès de sportifs ont mis en évidence que des pays avec une infrastructure médicale moins développée, comme le Brésil, sont plus susceptibles de connaître des décès prématurés dus à des maladies cardiaques (Smith et al., 2017). De plus, l’intensité de la compétition dans les pays où le football est une pratique quotidienne, comme le Brésil, peut augmenter les risques de défaillances cardiaques chez les joueurs, en particulier si les programmes de dépistage sont insuffisants.</p>
+          Cette augmentation est principalement due à deux phénomènes : la fonte des glaces dans les régions polaires et l'expansion thermique des océans. Une étude publiée par NASA montre que les glaciers des régions polaires perdent environ 2.6 milliards de tonnes de glace par an, contribuant ainsi de manière significative à l'élévation des mers. Par ailleurs, le rapport du GIEC (2021) indique que la montée du niveau de la mer pourrait atteindre 1 mètre d'ici la fin du siècle si les émissions de CO2 continuent de croître à leur rythme actuel, avec des conséquences dramatiques pour les zones côtières.
+          
+          Les villes côtières telles que Miami, Venise, et New York sont déjà confrontées à des inondations régulières, et la montée des mers menace les îles basses du Pacifique, dont certaines risquent de disparaître complètement sous les eaux dans les prochaines décennies. En somme, bien que les projections fournissent des informations sur les tendances à venir, elles simplifient souvent des facteurs plus complexes, comme l'impact des digues, de la gestion de l'eau, et des modifications locales du niveau de la mer.</p><br>
 
-        <h2>Contrastes avec les pays européens : le rôle des infrastructures de santé</h2>
-        <p>Des pays comme l'Autriche ou l'Algérie, qui présentent des taux de décès cardiaques beaucoup plus faibles, bénéficient de systèmes de santé mieux organisés et d'un suivi médical plus strict des athlètes. En effet, des études menées par l'UEFA et la FIFA ont montré que les pays européens ont mis en place des protocoles de dépistage des maladies cardiaques parmi les joueurs professionnels, ce qui contribue à réduire le nombre de décès cardiaques survenant sur le terrain (FIFA, 2019). Ainsi, les politiques sportives visant à améliorer la santé cardiaque des joueurs semblent avoir un impact direct sur la réduction de la mortalité, en particulier dans les pays ayant des systèmes de santé avancés.</p>
+        <h2>3. Fonte des Glaces Arctiques</h2>
+        <p>Les données sur la fonte des glaces arctiques<sup style="font-size: xx-small;"><a href="#visu3">4</a></sup> indiquent une perte significative de glace en mer depuis 1980. La fonte de la glace dans l'Arctique contribue directement à l'élévation du niveau de la mer, en plus de perturber des écosystèmes polaires. Le phénomène d'amplification arctique, où les températures augmentent de manière disproportionnée par rapport à d’autres régions, est particulièrement marqué dans cette zone.
 
-        <h2>2. Autres causes de décès : Accidents et blessures graves</h2>
-        <p>Comme l'illustre les données sur <a href="#visu9">le nombre de décés par tranche d'âge</a>, une grande majorité des décès (environ 66%) ne sont pas liés à des problèmes cardiaques, mais plutôt à d'autres facteurs tels que les blessures traumatiques, les accidents, ou les problèmes de santé généraux. Cela soulève la question des conditions physiques des joueurs, des risques accrus de blessures graves pendant les matchs et des protocoles de sécurité mis en place.</p><br>
+          Le GIEC estime que si cette tendance se poursuit, les glaciers de l'Antarctique et du Groenland pourraient contribuer à une élévation du niveau de la mer de plusieurs mètres d’ici la fin du siècle. La perte de glace est également liée à une rétroaction : à mesure que la glace fond, l'eau plus sombre qui reste sur la surface absorbe plus de chaleur solaire, accélérant encore la fonte.</p>
 
-        <b>Les blessures sur le terrain : Une cause de mortalité sous-estimée</b>
-        <p>Les blessures graves sur le terrain, bien que souvent sous-estimées dans les discussions sur les décès des joueurs, jouent un rôle important dans la mortalité. Une étude publiée par <a href="https://pubmed.ncbi.nlm.nih.gov/26464886/"> le British Journal of Sports Medicine</a> a révélé que les blessures traumatiques, en particulier celles touchant la tête et le cou, sont des causes importantes de décès dans le football professionnel (Trompeter et al., 2016). Le nombre élevé de décès dus à des causes non cardiaques pourrait également refléter un manque de protocoles de sécurité et une intensification des compétitions, ce qui augmente les risques pour la santé des joueurs.</p>
+        <b>Corrélation entre Température Globale et Niveau de la Mer</b>
+        <p>Les tendances de la température et de l'élévation du niveau de la mer sont intrinsèquement liées. Le réchauffement global augmente la température des océans, entraînant une expansion thermique de l'eau, et accélère la fonte des glaces des régions polaires. Comme on peut l’observer dans la Visualisation sur l'Evolution des indicateurs climatiques<sup style="font-size: xx-small;"><a href="#visu1">5</a></sup> et la Visualisation sur la Matrice de corrélation des indicateurs climatiques<sup style="font-size: xx-small;"><a href="#visu2">6</a></sup>, la température mondiale et le niveau de la mer évoluent de manière parallèle, indiquant une corrélation forte entre ces deux phénomènes. La fonte des glaces arctiques (graphique 3 <sup style="font-size: xx-small;"><a href="#visu3">7</a></sup>) amplifie encore cette dynamique, car l'augmentation du CO2 et du méthane dans l'atmosphère accélère ces processus.</p>
 
-        <h2>3. Facteurs socio-économiques et culturels : Disparités entre les pays</h2>
-        <p>Les différences observées entre les pays, comme en témoignent les graphiques<a href="#visu7">Répartition des âges des jours décédés par pays </a>et <a href="#visu8">Proportion des décés liés aux problémes cardiaques</a>, suggèrent que les conditions socio-économiques et les infrastructures de santé jouent un rôle important dans la mortalité des joueurs. Les pays avec un faible développement économique ou des infrastructures de santé moins avancées, comme l’Angola ou le Cameroun, connaissent un nombre de décès plus élevé, notamment à cause de l'absence de soins médicaux immédiats sur les terrains.</p><br>
+        <h2>Conclusion</h2>
+        <p>En somme, les données et visualisations disponibles montrent une correlation claire entre la montée des températures mondiales, l'élévation du niveau de la mer, et la fonte des glaces arctiques. Ces phénomènes sont largement soutenus par les rapports du GIEC, qui soulignent l’urgence d’agir pour limiter les émissions de gaz à effet de serre et éviter des conséquences écologiques et humaines dramatiques. Toutefois, les modèles utilisés pour prédire ces tendances sont relativement simples et ne peuvent prendre en compte toute la complexité des systèmes climatiques et des actions humaines.
 
-        <b>Le rôle des politiques sportives et des réglementations nationales</b>
-        <p>Les données de la <a href="#visu7">Répartition des âges des jours décédés par pays</a> montrent que des pays comme l'Angleterre et la Roumanie ont des nombres relativement élevés de décès, ce qui pourrait être dû à des pratiques de jeu plus agressives et à des défauts dans les protocoles de sécurité, contrairement à des pays comme l'Italie ou l’Allemagne où les réglementations en matière de sécurité des joueurs sont plus strictes. Cela reflète l’impact des politiques sportives nationales sur la santé des joueurs, ainsi que des efforts pour réduire le risque de blessures fatales grâce à des améliorations des équipements, des soins médicaux d'urgence et des règlements sur la sécurité.</p><br>
+          Les projections climatiques ne sont pas figées et dépendent fortement des politiques climatiques mises en œuvre, des efforts de réduction des émissions et de l’adaptation des infrastructures humaines. Les données actuelles soulignent l'importance de renforcer les mesures de mitigation et de préparation face aux impacts du changement climatique.</p><br>
 
         <h2>4. Les facteurs démographiques et l’âge des joueurs</h2>
         <p>L’analyse des Visualisations <a href="#visu8">Proportion des décés liés aux problémes cardiaques</a> et <a href="#visu9">le nombre de décés par tranche d'âge</a> révèle que la tranche d’âge des 20-30 ans est la plus touchée, avec 131 décès enregistrés, ce qui reflète un pic d’activité dans la carrière des joueurs. Cette corrélation entre l'âge des joueurs et le nombre de décès peut être expliquée par l'intensification de l'entraînement et des matchs à cet âge, augmentant le risque de blessures graves.</p><br>
@@ -402,20 +421,16 @@ p:last-of-type {
         <b>L’importance de la gestion du stress et de la santé mentale</b>
         <p>Les jeunes joueurs sont également plus susceptibles de subir un stress psychologique accru et des pressions physiques pendant leur carrière, ce qui peut contribuer à des décès par causes non cardiaques. Les études sur la santé mentale des athlètes professionnels montrent que la gestion du stress et de la pression psychologique est cruciale pour prévenir des issues fatales, en particulier dans les jeunes joueurs soumis à des compétitions de haut niveau (Reardon et al., 2019).</p><br>
 
-        <h2>Conclusion : Une approche multifactorielle pour réduire les décès chez les joueurs de football
-        </h2>
-        <p>En conclusion, les données analysées à travers ces visualisations, ainsi que les recherches externes, révèlent qu’une série de facteurs interconnectés – incluant les problèmes cardiaques, les blessures traumatiques, les conditions socio-économiques et l’âge des joueurs – expliquent la mortalité dans le football professionnel. Les disparités entre les pays suggèrent que des approches ciblées, prenant en compte les infrastructures de santé, la prévention des blessures et l’amélioration de la sécurité des joueurs, sont nécessaires pour réduire ces décès.
-
-          Il est donc essentiel de renforcer les politiques de santé des sportifs, en particulier dans les pays à faibles ressources, tout en continuant à promouvoir une meilleure surveillance cardiaque et des protocoles de sécurité sur les terrains. La mise en œuvre de ces politiques pourrait non seulement réduire le nombre de décès, mais aussi améliorer la santé globale des joueurs de football à l’échelle mondiale.</p>
-
         </div>
 
        <b>Sources externes :</b>
        <ul>
-        <li>FIFA (2019). Medical Recommendations for Football Players: Cardiovascular Screening. Disponible sur : <a href="https://www.fifa.com/fr">FIFA Medical</a> </li>
-        <li>Smith, J. et al. (2017). Cardiac Deaths in Football: A Review of Recent Data. British Journal of Sports Medicine, 51(10): 763-768.</li>
-        <li>Trompeter, L. et al. (2016). Injury Risk Factors in Football: A Review of Head and Neck Injuries. British Journal of Sports Medicine, 50(9): 678-684.</li>
-        <li>Reardon, C. et al. (2019). Mental Health and Stress in Professional Athletes: The Need for a Holistic Approach. Sports Medicine, 49(9): 1301-1310.</li>
+        <li>GIEC (2021) - Rapport du Groupe de travail I du sixième rapport d'évaluation : https://www.ipcc.ch/report/ar6/wg1/ </li>
+        <li>NASA - Signes vitaux du climat : Niveau de la mer : https://climate.nasa.gov/vital-signs/sea-level/
+        </li>
+        <li>IPCC (2021) - Sixth Assessment Report Working Group I : https://www.ipcc.ch/report/ar6/wg1/</li>
+        <li>NOAA - Impacts du changement climatique : https://www.noaa.gov/education/resource-collections/climate/climate-change-impacts</li>
+        <li>Nature - Le rapport du GIEC en 2021 : ce que vous devez savoir : https://www.nature.com/articles/d41586-021-00090-3</li>
        </ul>
     </div>
     </div>
@@ -437,6 +452,17 @@ p:last-of-type {
         showMoreButton.textContent = 'Voir plus';
       }
     });
+
+  document.getElementById('download-btn').addEventListener('click', function() {
+    const link = document.createElement('a');
+    link.href = 'Climate_Change_Indicators.csv';  // Remplace avec le chemin réel du fichier
+    link.download = 'donnees_climatiques.csv';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
+
+
   </script>
 </body>
 </html>
